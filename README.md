@@ -22,17 +22,18 @@ This code can be used by opening each .R or .Rmd file within RStudio, version 20
 
 | Column Name | Data Type   | Description |
 | ----------- | ----------- | ----------- |
-| artist      | String      | This column contains a string of the name of the artist of the song. In this data set, all values in this column are “Taylor Swift”. |
-| album       | String      | This column contains a string of the name of the album the song lyrics are from. This has six unique values, which include: “Taylor Swift”, “Fearless”, “Speak Now”, “Red”, “1989”, and “Reputation”. |
-| track_title | String      | This column contains a string of the name of the song that lyrics are from. |
-| track_n     | Integer     | This column contains the integer of the track number on the album of the song that lyrics are from. |
-| lyrics      | String      | This column contains a string of the song lyrics from the song and line described in the other columns. |
-| line        | Integer     | This column contains an integer of what line of the song the lyrics are from. |
-| year        | Integer     | This column contains an integer value of the year the song the lyrics are from were released. |
+| STATION     | String      | This column contains a string of the name of the station for the weather data. In this data set, all values in this column are “USC00441593”. |
+| DATE        | String      | This column contains the date for each data point, ranging from “2008-03-30” to “2023-03-30”. Every value in this column should be unique. |
+| PRCP        | Integer     | The precipitation, in inches, for that date. |
+| SNOW        | Integer     | The snowfall, in inches, for that date. |
+| SNWD        | Integer     | The snow depth, in inches, for that date. |
+| TMAX        | Integer     | The observed temperature maximum for the day, recorded in Fahrenheit. |
+| TMIN        | Integer     | The observed temperature minimum for the day, recorded in Fahrenheit. |
+| TOBS        | Integer     | The temperature at the time of observation, recorded in Fahrenheit. |
 
 #### Link to Data
 
-Our dataset can be found [here]([https://www.kaggle.com/datasets/PromptCloudHQ/taylor-swift-song-lyrics-from-all-the-albums](https://drive.google.com/file/d/1W32Mw8LcvxuTWM0gqHaSRfgvCCmPkCu0/view?usp=sharing) [1].
+Our dataset can be found [here](https://drive.google.com/file/d/1W32Mw8LcvxuTWM0gqHaSRfgvCCmPkCu0/view?usp=sharing), and was originally obtained from the NOAA website [1].
 
 #### Relevant Notes About Data
 
@@ -43,12 +44,11 @@ There are several significant notes about our dataset. Firstly, it is important 
 | Figure      | Description | Takeaways   |
 | ----------- | ----------- | ----------- |
 | Romance:CountryRatioGraph.png| This graph has each Taylor Swift song plotted with the year of release on the x-axis and it's romance-to-country ratio on the y-axis. It also includes a line of best fit.| The line of best fit having a positive slope confirms our hypothesis that the lyrics of Taylor Swift's songs have shifted from being more aligned with the country theme to more aligned with the romance theme. |
-| album.Romance:Country.png |  This graph has each Taylor Swift album plotted with the year of release on the x-axis and it's romance-to-country ratio on the y-axis. It also includes a line of best fit. | The line of best fit having a positive slope confirms our hypothesis that the lyrics of Taylor Swift's songs have shifted from being more aligned with the country theme to more aligned with the romance theme. |
 
 ## References
 
-[1] Vimal, Tarun, “Taylor Swift Song Lyrics from all the albums,” Kaggle.com, CC BY-SA 4.0, 2018. [Online]. Available: https://www.kaggle.com/datasets/PromptCloudHQ/taylor-swift-song-lyrics-from-all-the-albums. [Accessed February 14, 2023].
+[1] National Oceanic and Atmospheric Administration, “Daily Summaries Location Details, ZIP 22904,” National Oceanic and Atmospheric Administration. [Online]. Available: https://www.ncei.noaa.gov/cdo-web/datasets/GHCND/locations/ZIP:22904/detail. [Accessed Apr. 5, 2023].
 
-Our submission for M1 can be found [here](https://docs.google.com/document/d/1kSw-WgsIzZXb8ecAi_E-I_ueoU8nlRZUaWE8Y-7jrLc/edit?usp=sharing).
+Our submission for M1 can be found [here](https://docs.google.com/document/d/1KtRkGcfcuY3WumVRNYGSjXVEUWk6gJ7HTOci15iLDM8/edit?usp=sharing).
 
-Our submission for M2 is linked [here](https://docs.google.com/document/d/1C0tUSKeAW0-qPkJrtTJGI97A4vV8yJptQ7cCOelM19A/edit?usp=sharing).
+Our submission for M2 is linked [here](https://docs.google.com/document/d/1_bvMRtwMolEkX2z_-Z1ZTqJKe3f7xxGh91NO3DkRolE/edit?usp=sharing).
