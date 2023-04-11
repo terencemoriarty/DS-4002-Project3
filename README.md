@@ -2,7 +2,7 @@
 
 ## Contents of the Repository
 
-This repository includes all of the necessary files related to the first DS 4002 project for our group, The Swifties. This README.md file contains an overview of what is included in each of the three folders: SRC, Data, and Figures. The LICENSE.md file explains to a visitor the terms under which they may use and cite this repository. The SRC folder contains all source code for the project. The Data folder contains all of the data for the project. Lastly, the Figures folder contains all figures generated over the course of the project.
+This repository includes all of the necessary files related to the third DS 4002 project for our group, The Swifties B. This README.md file contains an overview of what is included in each of the three folders: SRC, Data, and Figures. The LICENSE.md file explains to a visitor the terms under which they may use and cite this repository. The SRC folder contains all source code for the project. The Data folder contains all of the data for the project. Lastly, the Figures folder contains all figures generated over the course of the project.
 
 ## SRC
 
@@ -32,7 +32,7 @@ This code can be used by opening each .R or .Rmd file within RStudio, version 20
 
 #### Link to Data
 
-Our dataset can be found [here](https://www.kaggle.com/datasets/PromptCloudHQ/taylor-swift-song-lyrics-from-all-the-albums) [1].
+Our dataset can be found [here]([https://www.kaggle.com/datasets/PromptCloudHQ/taylor-swift-song-lyrics-from-all-the-albums](https://drive.google.com/file/d/1W32Mw8LcvxuTWM0gqHaSRfgvCCmPkCu0/view?usp=sharing) [1].
 
 #### Relevant Notes About Data
 
