@@ -1,0 +1,232 @@
+---
+title: "Project_Work3"
+author: "Noah McIntire (nem2pq)"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Import Packages
+```{r}
+library(dplyr) # for data wrangling
+library(lubridate) # date manipulation
+library(TSstudio) # time series interactive viz
+library(forecast) # time series library
+library(tseries) # for adf.test
+```
+
+
+# Load in data and drop unneccesary columns and rows
+```{r}
+cville_weather <- read.csv("3291089 (1).csv")
+
+cville_weather <- subset(cville_weather, select = -c(DAPR, MDPR, WESD))
+cville_weather <- cville_weather[-c(1,2),]
+head(cville_weather)
+```
+Split into training and test data, make sure date ranges are correct
+```{r}
+climate_train <- cville_weather[1:4353,]
+head(climate_train)
+climate_test <- cville_weather[4354:5448,]
+head(climate_test)
+range(climate_train$DATE)
+range(climate_test$DATE)
+```
+# Check for NAs in the dataset, and drop them if present
+```{r}
+anyNA(climate_train)
+anyNA(climate_test)
+climate_train<-climate_train[complete.cases(climate_train), ]
+climate_test<-climate_test[complete.cases(climate_test), ]
+anyNA(climate_train)
+anyNA(climate_test)
+```
+
+# Preprocess data for High temperature training
+```{r}
+train_high <- climate_train %>% select(DATE, TMAX)
+test_high <- climate_test %>% select(DATE, TMAX)
+```
+
+```{r}
+ts_httrain <- ts(data = train_high$TMAX,
+                start = c(2008,05),
+                frequency = 365)
+autoplot(ts_httrain)
+```
+
+```{r}
+ts_httest <- ts(data = test_high$TMAX,
+                start = c(2020,04),
+                frequency = 365)
+autoplot(ts_httest)
+```
+
+#Decompse time series into a new set
+```{r}
+climate_cvht <- decompose(ts_httrain)
+plot(climate_cvht)
+```
+
+
+# Creating a holt winters model
+```{r}
+climate_hwht <- HoltWinters(ts_httrain,seasonal = "additive")
+climate_hwht
+```
+
+
+```{r}
+climate_forecastht <- forecast(climate_hwht, h=1090)
+climate_forecastht
+```
+
+
+```{r}
+forecast::accuracy(climate_forecastht, ts_httest)
+```
+
+# Repeat with low temp, obs temp?
+# Preprocess data for High temperature training
+```{r}
+train_low <- climate_train %>% select(DATE, TMIN)
+test_low <- climate_test %>% select(DATE, TMIN)
+```
+
+```{r}
+ts_lttrain <- ts(data = train_low$TMIN,
+                start = c(2008,05),
+                frequency = 365)
+autoplot(ts_lttrain)
+```
+
+```{r}
+ts_lttest <- ts(data = test_low$TMIN,
+                start = c(2020,04),
+                frequency = 365)
+autoplot(ts_lttest)
+```
+
+#Decompse time series into a new set
+```{r}
+climate_cvlt <- decompose(ts_lttrain)
+plot(climate_cvlt)
+```
+
+
+# Creating a holt winters model
+```{r}
+climate_hwlt <- HoltWinters(ts_lttrain,seasonal = "additive")
+climate_hwlt
+```
+
+
+```{r}
+climate_forecastlt <- forecast(climate_hwlt, h=1090)
+climate_forecastlt
+```
+
+
+```{r}
+forecast::accuracy(climate_forecastlt, ts_lttest)
+```
+
+
+# Now the Observed Temperature
+
+
+# Preprocess data for High temperature training
+```{r}
+train_ob <- climate_train %>% select(DATE, TOBS)
+test_ob <- climate_test %>% select(DATE, TOBS)
+```
+
+```{r}
+ts_obtrain <- ts(data = train_ob$TOBS,
+                start = c(2008,05),
+                frequency = 365)
+autoplot(ts_obtrain)
+```
+
+```{r}
+ts_obtest <- ts(data = test_ob$TOBS,
+                start = c(2020,04),
+                frequency = 365)
+autoplot(ts_obtest)
+```
+
+#Decompse time series into a new set
+```{r}
+climate_cvob <- decompose(ts_obtrain)
+plot(climate_cvob)
+```
+
+
+# Creating a holt winters model
+```{r}
+climate_hwob <- HoltWinters(ts_obtrain,seasonal = "additive")
+climate_hwob
+```
+
+
+```{r}
+climate_forecastob <- forecast(climate_hwob, h=1090)
+climate_forecastob
+```
+
+
+```{r}
+forecast::accuracy(climate_forecastob, ts_obtest)
+```
+
+# Now for precipitation
+# Preprocess data for High temperature training
+```{r}
+train_high <- climate_train %>% select(DATE, PRCP)
+test_high <- climate_test %>% select(DATE, PRCP)
+```
+
+```{r}
+ts_pctrain <- ts(data = train_high$PRCP,
+                start = c(2008,05),
+                frequency = 365)
+autoplot(ts_pctrain)
+```
+
+```{r}
+ts_pctest <- ts(data = test_high$PRCP,
+                start = c(2020,04),
+                frequency = 365)
+autoplot(ts_pctest)
+```
+
+#Decompse time series into a new set
+```{r}
+climate_cvpc <- decompose(ts_pctrain)
+plot(climate_cvpc)
+```
+
+
+# Creating a holt winters model
+```{r}
+climate_hwpc <- HoltWinters(ts_pctrain,seasonal = "additive")
+climate_hwpc
+```
+
+
+```{r}
+climate_forecastpc <- forecast(climate_hwpc, h=1090)
+climate_forecastpc
+```
+
+
+```{r}
+forecast::accuracy(climate_forecastpc, ts_pctest)
+```
+
+
+
