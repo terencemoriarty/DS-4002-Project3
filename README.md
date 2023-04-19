@@ -41,7 +41,7 @@ Our data set comes from the National Oceanic and Atmospheric Administration (NOA
 
 | Figure      | Description | Takeaways   |
 | ----------- | ----------- | ----------- |
-| Romance:CountryRatioGraph.png| This graph has each Taylor Swift song plotted with the year of release on the x-axis and it's romance-to-country ratio on the y-axis. It also includes a line of best fit.| The line of best fit having a positive slope confirms our hypothesis that the lyrics of Taylor Swift's songs have shifted from being more aligned with the country theme to more aligned with the romance theme. |
+| HighTemperature_Decomposed.png| This graph includes the observed high temperature for each day in the training set, as well as the decomposition of the time series into its trend, seasonality, and random components.| This graph helps to explain how our Holt-Winters model works, as it utilizes the trend and seasonal components shown here to forecast the high temperature at future dates. |
 
 ## References
 
