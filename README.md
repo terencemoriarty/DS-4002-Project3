@@ -35,7 +35,7 @@ Our dataset can be found [here](https://drive.google.com/file/d/1W32Mw8LcvxuTWM0
 
 #### Relevant Notes About Data
 
-Our data set comes from the National Oceanic and Atmospheric Administration (NOAA), where we were able to request daily weather data from a Charlottesville weather station (zip code 22904) over the last 15 years [1]. This data was sent to us via email in the format of a .CSV, containing 11 total columns. However, three of these columns are blank/ full of NAs, so we have opted to drop them and not include them in the above data dictionary.
+Our data set comes from the National Oceanic and Atmospheric Administration (NOAA), where we were able to request daily weather data from a Charlottesville weather station (zip code 22904) over the last 15 years [1]. This data was sent to us via email in the format of a .CSV, containing 11 total columns. However, three of these columns are blank/full of NAs, so we have opted to drop them and not include them in the above data dictionary.
 
 ## Figures 
 
