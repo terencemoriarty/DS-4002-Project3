@@ -8,7 +8,7 @@ This repository includes all of the necessary files related to the third DS 4002
 
 ### Installing/Building Code
 
-We downloaded the data as a .csv file and cleaned it for use in R. Make sure the data is available and accessible in the same working directory as the file, and make any neccessary changes to the file path in order for the dataset to be loaded into RStudio on your device.
+We downloaded the data as a .csv file and cleaned it for use in R. Make sure the data is available and accessible in the same working directory as the file, and make any necessary changes to the file path in order for the dataset to be loaded into RStudio on your device.
 
 ### Using Code
 
