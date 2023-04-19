@@ -6,15 +6,13 @@ This repository includes all of the necessary files related to the third DS 4002
 
 ## SRC
 
-We pulled the source data from Kaggle. It includes all of Taylor Swift's songs released during the time frame 2006-2017. It also includes the lyrics, song name, album name, and year of release.
-
 ### Installing/Building Code
 
 We downloaded the data as a .csv file and cleaned it for use in R. Make sure the data is available and accessible in the same working directory as the file, and make any neccessary changes to the file path in order for the dataset to be loaded into RStudio on your device.
 
 ### Using Code
 
-This code can be used by opening each .R or .Rmd file within RStudio, version 2022.12.
+This code can be used by opening the .Rmd file within RStudio, version 2022.12.
 
 ## Data
 
@@ -37,7 +35,7 @@ Our dataset can be found [here](https://drive.google.com/file/d/1W32Mw8LcvxuTWM0
 
 #### Relevant Notes About Data
 
-There are several significant notes about our dataset. Firstly, it is important to note that it only contains lyrics from Taylor Swift's first six albums, not her entire discography. This led to our group adjusting our hypothesis and research question accordingly. Additionally, it is important to note that the dataset breaks up lyrics by line in each song, so some data aggregation will be necessary in order to use each song as individual data points.
+Our data set comes from the National Oceanic and Atmospheric Administration (NOAA), where we were able to request daily weather data from a Charlottesville weather station (zip code 22904) over the last 15 years [1]. This data was sent to us via email in the format of a .CSV, containing 11 total columns. However, three of these columns are blank/ full of NAs, so we have opted to drop them and not include them in the above data dictionary.
 
 ## Figures 
 
