@@ -42,6 +42,7 @@ Our data set comes from the National Oceanic and Atmospheric Administration (NOA
 | Figure      | Description | Takeaways   |
 | ----------- | ----------- | ----------- |
 | HighTemperature_Decomposed.png| This graph includes the observed high temperature for each day in the training set, as well as the decomposition of the time series into its trend, seasonality, and random components.| This graph helps to explain how our Holt-Winters model works, as it utilizes the trend and seasonal components shown here to forecast the high temperature at future dates. |
+| HighTempForecast.png| This graph includes the observed high temperature values in the the training set, as well as the forecasted values with confidence intervals for the test set.| This graph helps to explain how our forecast performed, as it shows the forecasted values for the test set are in line with what would be expected from the training set. |
 
 ## References
 
